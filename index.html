@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom & Brew | Premium Flower Shop & Artisanal Café</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Bloom & Brew is a luxury floral boutique and cozy artisanal café. Order handcrafted flower bouquets, organic botanical teas, and specialty roasts online.">
+  <meta name="keywords" content="Bloom and Brew, luxury flower shop, floral boutique, specialty cafe, rose latte, fresh flowers, wedding flowers, cafe reservation">
+  <meta name="author" content="Bloom & Brew Studio">
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="Bloom & Brew | Where Flowers Bloom & Coffee Warms the Soul">
+  <meta property="og:description" content="Experience the unique fusion of fresh floral artistry and specialty coffee brewing at Bloom & Brew.">
+  <meta property="og:image" content="images/hero/hero-bg.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+  <!-- Google Fonts: Playfair Display & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 Pro Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Swiper.js Slider CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Preloader & Scroll Progress Bar
+       ========================================================================= -->
+  <div id="preloader">
+    <i class="fas fa-spa preloader-flower"></i>
+    <div class="preloader-title">Bloom & Brew</div>
+    <div class="preloader-subtitle">Flowers & Coffee Studio</div>
+  </div>
+
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Floating Action Widgets -->
+  <a href="https://wa.me/15550192834" target="_blank" class="floating-whatsapp" aria-label="Contact on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- =========================================================================
+       1. Sticky Glassmorphism Navigation Bar
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-bloom">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-wrapper" href="#hero">
+        <i class="fas fa-seedling brand-icon"></i>
+        <span class="brand-text">Bloom <span>&</span> Brew</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#bloomNavbar" aria-controls="bloomNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars fs-2 text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="bloomNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-bloom active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bloom" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bloom" href="#flowers">Flower Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bloom" href="#cafe">Café Menu</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bloom" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bloom" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bloom" href="#ordering">Online Order</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-bloom" href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="theme-toggle-btn" class="btn-icon-circle" aria-label="Toggle dark mode">
+            <i id="theme-icon" class="fas fa-moon"></i>
+          </button>
+
+          <a href="#ordering" class="btn-bloom btn-bloom-primary">
+            <i class="fas fa-shopping-bag"></i> Order Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       2. Hero Section (Full Screen with Floating Petals)
+       ========================================================================= -->
+  <section id="hero" class="hero-section">
+    <canvas id="petals-canvas"></canvas>
+
+    <div class="container position-relative z-3">
+      <div class="hero-content-box">
+        <div class="badge-bloom mb-3" data-aos="fade-down">
+          <i class="fas fa-star me-1 text-warning"></i> Award-Winning Botanical Café
+        </div>
+
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+          Where <span class="highlight">Flowers Bloom</span> <br>& Coffee Warms the Soul
+        </h1>
+
+        <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+          Immerse yourself in a luxurious sensory sanctuary. Discover hand-curated floral arrangements paired with artisanal specialty brews and gourmet pastries.
+        </p>
+
+        <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="300">
+          <a href="#flowers" class="btn-bloom btn-bloom-primary">
+            <i class="fas fa-spa me-2"></i> Shop Flowers
+          </a>
+          <a href="#cafe" class="btn-bloom btn-bloom-secondary">
+            <i class="fas fa-coffee me-2"></i> Explore Café Menu
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+      <span>Scroll Down</span>
+      <div class="mouse-icon">
+        <div class="mouse-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. About Us & Statistics Section
+       ========================================================================= -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="about-img-box">
+            <img src="images/hero/about-img.jpg" alt="Artisan Florist at Bloom & Brew" loading="lazy">
+            <div class="about-badge-card">
+              <div class="about-badge-number">100%</div>
+              <div class="small text-muted fw-semibold">Organically Sourced</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left">
+          <span class="badge-bloom">Our Story & Philosophy</span>
+          <h2 class="section-title">A Harmony of Botanical Beauty & Coffee Craft</h2>
+          <p class="text-muted lead">
+            Founded a decade ago, Bloom & Brew was born out of a simple passion: to elevate everyday moments into luxurious sensory experiences.
+          </p>
+          <p class="text-muted">
+            We source fresh, sustainable blossoms directly from eco-friendly flower farms, while our master baristas craft single-origin coffees and floral-infused signature teas in a warm, glassmorphic boutique setting.
+          </p>
+
+          <div class="row g-4 mt-3">
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <i class="fas fa-award stat-icon"></i>
+                <div class="stat-number" data-count="10">0</div>
+                <div class="stat-label">Years Legacy</div>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <i class="fas fa-smile-beam stat-icon"></i>
+                <div class="stat-number" data-count="15000">0</div>
+                <div class="stat-label">Happy Guests</div>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <i class="fas fa-glass-cheers stat-icon"></i>
+                <div class="stat-number" data-count="500">0</div>
+                <div class="stat-label">Luxury Events</div>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <i class="fas fa-leaf stat-icon"></i>
+                <div class="stat-number" data-count="100">0</div>
+                <div class="stat-label">% Fresh Daily</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. Flower Collection Section
+       ========================================================================= -->
+  <section id="flowers" class="flower-section">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge-bloom">Bespoke Floral Designs</span>
+        <h2 class="section-title">Luxury Flower Collection</h2>
+        <p class="section-subtitle">Handcrafted with passion for weddings, birthdays, anniversaries, and grand celebrations.</p>
+      </div>
+
+      <!-- Filter Navigation -->
+      <div id="flower-filter-nav" class="filter-nav" data-aos="fade-up" data-aos-delay="100">
+        <button class="btn-filter active" data-filter="all">All Flowers</button>
+        <button class="btn-filter" data-filter="bouquets">Bouquets</button>
+        <button class="btn-filter" data-filter="wedding">Wedding Flowers</button>
+        <button class="btn-filter" data-filter="birthday">Birthday Flowers</button>
+        <button class="btn-filter" data-filter="roses">Luxury Roses</button>
+        <button class="btn-filter" data-filter="events">Event Decor</button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="row g-4">
+        <!-- Flower 1 -->
+        <div class="col-md-6 col-lg-4 flower-item-col bouquets roses" data-aos="fade-up">
+          <div class="flower-card">
+            <div class="flower-img-wrapper">
+              <img src="images/flowers/flower-1.jpg" alt="Elysian Rose Bouquet" loading="lazy">
+              <span class="flower-category-tag">Luxury Roses</span>
+            </div>
+            <div class="flower-details">
+              <h3 class="flower-title">Elysian Garden Roses</h3>
+              <p class="text-muted small">Hand-picked blush and lavender roses with fresh eucalyptus foliage.</p>
+              <div class="flower-meta">
+                <div class="flower-price">$89.00</div>
+                <div class="flower-rating"><i class="fas fa-star"></i> 4.9 (124)</div>
+              </div>
+              <a href="#ordering" class="btn-bloom btn-bloom-outline w-100 mt-3">
+                <i class="fas fa-cart-plus me-1"></i> Order Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flower 2 -->
+        <div class="col-md-6 col-lg-4 flower-item-col wedding" data-aos="fade-up" data-aos-delay="100">
+          <div class="flower-card">
+            <div class="flower-img-wrapper">
+              <img src="images/flowers/flower-2.jpg" alt="Velvet Bloom Bridal Bouquet" loading="lazy">
+              <span class="flower-category-tag">Wedding Special</span>
+            </div>
+            <div class="flower-details">
+              <h3 class="flower-title">Velvet Bloom Bridal</h3>
+              <p class="text-muted small">Premium white lilies, blush peonies, and silver dollar eucalyptus.</p>
+              <div class="flower-meta">
+                <div class="flower-price">$149.00</div>
+                <div class="flower-rating"><i class="fas fa-star"></i> 5.0 (98)</div>
+              </div>
+              <a href="#ordering" class="btn-bloom btn-bloom-outline w-100 mt-3">
+                <i class="fas fa-cart-plus me-1"></i> Order Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flower 3 -->
+        <div class="col-md-6 col-lg-4 flower-item-col birthday bouquets" data-aos="fade-up" data-aos-delay="200">
+          <div class="flower-card">
+            <div class="flower-img-wrapper">
+              <img src="images/hero/hero-bg.jpg" alt="Golden Hour Celebration" loading="lazy">
+              <span class="flower-category-tag">Birthday Flowers</span>
+            </div>
+            <div class="flower-details">
+              <h3 class="flower-title">Golden Hour Sunshine</h3>
+              <p class="text-muted small">Vibrant sunflowers, yellow ranunculus, and pastel chamomile blossoms.</p>
+              <div class="flower-meta">
+                <div class="flower-price">$75.00</div>
+                <div class="flower-rating"><i class="fas fa-star"></i> 4.8 (87)</div>
+              </div>
+              <a href="#ordering" class="btn-bloom btn-bloom-outline w-100 mt-3">
+                <i class="fas fa-cart-plus me-1"></i> Order Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flower 4 -->
+        <div class="col-md-6 col-lg-4 flower-item-col roses events" data-aos="fade-up">
+          <div class="flower-card">
+            <div class="flower-img-wrapper">
+              <img src="images/hero/about-img.jpg" alt="Grand Red Rose Symphony" loading="lazy">
+              <span class="flower-category-tag">Luxury Roses</span>
+            </div>
+            <div class="flower-details">
+              <h3 class="flower-title">Grand Crimson 50 Roses</h3>
+              <p class="text-muted small">50 long-stemmed Ecuadorian velvet red roses tied with silk ribbon.</p>
+              <div class="flower-meta">
+                <div class="flower-price">$199.00</div>
+                <div class="flower-rating"><i class="fas fa-star"></i> 5.0 (215)</div>
+              </div>
+              <a href="#ordering" class="btn-bloom btn-bloom-outline w-100 mt-3">
+                <i class="fas fa-cart-plus me-1"></i> Order Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flower 5 -->
+        <div class="col-md-6 col-lg-4 flower-item-col events" data-aos="fade-up" data-aos-delay="100">
+          <div class="flower-card">
+            <div class="flower-img-wrapper">
+              <img src="images/flowers/flower-1.jpg" alt="Botanical Event Installation" loading="lazy">
+              <span class="flower-category-tag">Event Decor</span>
+            </div>
+            <div class="flower-details">
+              <h3 class="flower-title">Botanical Arch Centerpiece</h3>
+              <p class="text-muted small">Custom floral arches and table arrangements for galas and VIP events.</p>
+              <div class="flower-meta">
+                <div class="flower-price">$350.00+</div>
+                <div class="flower-rating"><i class="fas fa-star"></i> 4.9 (45)</div>
+              </div>
+              <a href="#ordering" class="btn-bloom btn-bloom-outline w-100 mt-3">
+                <i class="fas fa-calendar-check me-1"></i> Consult Decorator
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flower 6 -->
+        <div class="col-md-6 col-lg-4 flower-item-col birthday bouquets" data-aos="fade-up" data-aos-delay="200">
+          <div class="flower-card">
+            <div class="flower-img-wrapper">
+              <img src="images/flowers/flower-2.jpg" alt="Lavender Dream Box" loading="lazy">
+              <span class="flower-category-tag">Custom Box</span>
+            </div>
+            <div class="flower-details">
+              <h3 class="flower-title">Lavender Dream Flower Box</h3>
+              <p class="text-muted small">Delicate French lavender, hydrangeas, and sweet pea flowers in a velvet box.</p>
+              <div class="flower-meta">
+                <div class="flower-price">$95.00</div>
+                <div class="flower-rating"><i class="fas fa-star"></i> 4.9 (73)</div>
+              </div>
+              <a href="#ordering" class="btn-bloom btn-bloom-outline w-100 mt-3">
+                <i class="fas fa-cart-plus me-1"></i> Order Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. Café Menu Section
+       ========================================================================= -->
+  <section id="cafe" class="cafe-section">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge-bloom">Artisanal Brews & Delicacies</span>
+        <h2 class="section-title">The Café Experience Menu</h2>
+        <p class="section-subtitle">Savor flower-infused signature coffees, organic loose-leaf teas, and freshly baked pastries.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div id="cafe-filter-nav" class="filter-nav" data-aos="fade-up">
+        <button class="btn-filter active" data-filter="all">All Menu</button>
+        <button class="btn-filter" data-filter="coffee">Signature Coffee</button>
+        <button class="btn-filter" data-filter="tea">Botanical Tea</button>
+        <button class="btn-filter" data-filter="desserts">Pastries & Desserts</button>
+        <button class="btn-filter" data-filter="breakfast">Breakfast</button>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <!-- Item 1 -->
+        <div class="col-lg-6 cafe-menu-item-col coffee" data-aos="fade-up">
+          <div class="menu-card">
+            <img src="images/cafe/cafe-1.jpg" alt="Artisanal Rose Latte" class="menu-item-img" loading="lazy">
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">Signature Rose Velvet Latte</h4>
+                <div class="menu-item-dots"></div>
+                <div class="menu-item-price">$7.50</div>
+              </div>
+              <p class="menu-item-desc">Espresso infused with organic rose water, oat milk, topped with edible pink petals.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-lg-6 cafe-menu-item-col tea" data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-card">
+            <img src="images/hero/hero-bg.jpg" alt="Lavender Cold Brew" class="menu-item-img" loading="lazy">
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">French Lavender Cold Brew</h4>
+                <div class="menu-item-dots"></div>
+                <div class="menu-item-price">$6.80</div>
+              </div>
+              <p class="menu-item-desc">Slow-steeped Ethiopian coffee infused with French lavender syrup and vanilla sweet cream.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-lg-6 cafe-menu-item-col desserts" data-aos="fade-up">
+          <div class="menu-card">
+            <img src="images/cafe/cafe-1.jpg" alt="Pistachio Croissant" class="menu-item-img" loading="lazy">
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">Pistachio & Raspberry Croissant</h4>
+                <div class="menu-item-dots"></div>
+                <div class="menu-item-price">$5.90</div>
+              </div>
+              <p class="menu-item-desc">Flaky butter croissant filled with pistachio cream and fresh raspberry compote.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="col-lg-6 cafe-menu-item-col breakfast" data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-card">
+            <img src="images/hero/about-img.jpg" alt="Avocado Toast" class="menu-item-img" loading="lazy">
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">Botanical Avocado Toast</h4>
+                <div class="menu-item-dots"></div>
+                <div class="menu-item-price">$13.50</div>
+              </div>
+              <p class="menu-item-desc">Artisanal sourdough, smashed hass avocado, microgreens, edible pansies, and za'atar glaze.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. Featured Experience Section (Split Layout)
+       ========================================================================= -->
+  <section id="experience" class="experience-section">
+    <div class="container">
+      <div class="split-experience-box">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6">
+            <img src="images/hero/experience-img.jpg" alt="Bloom & Brew Dual Experience" class="split-img" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <div class="split-content">
+              <span class="badge-bloom">The Perfect Fusion</span>
+              <h2 class="section-title">Where Floral Artistry Meets Specialty Coffee</h2>
+              <p class="text-muted">
+                At Bloom & Brew, every visit is a journey for the senses. Take a seat amidst aromatic blooms while enjoying handcrafted drinks created by our award-winning baristas.
+              </p>
+              <div class="d-flex flex-column gap-3 my-4">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="fas fa-check-circle text-success fs-4"></i>
+                  <span>Fresh daily farm-to-table floral arrangements</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <i class="fas fa-check-circle text-success fs-4"></i>
+                  <span>Single-origin ethically sourced coffee beans</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <i class="fas fa-check-circle text-success fs-4"></i>
+                  <span>Private garden patio & glasshouse seating</span>
+                </div>
+              </div>
+              <a href="#ordering" class="btn-bloom btn-bloom-primary">Reserve a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. Masonry Gallery Section
+       ========================================================================= -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge-bloom">Visual Journey</span>
+        <h2 class="section-title">Instagram Moments & Gallery</h2>
+        <p class="section-subtitle">Take a glance at our floral creations, cozy cafe vibes, and guest celebrations.</p>
+      </div>
+
+      <div id="gallery-filter-nav" class="filter-nav" data-aos="fade-up">
+        <button class="btn-filter active" data-filter="all">All Photos</button>
+        <button class="btn-filter" data-filter="boutique">Boutique</button>
+        <button class="btn-filter" data-filter="brews">Coffee & Teas</button>
+        <button class="btn-filter" data-filter="events">Special Events</button>
+      </div>
+
+      <div class="gallery-grid mt-4">
+        <div class="gallery-item gallery-item-col boutique" data-aos="zoom-in">
+          <img src="images/flowers/flower-1.jpg" alt="Gallery Photo 1" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fab fa-instagram"></i>
+            <h5 class="m-0">@BloomAndBrew</h5>
+            <small>Bespoke Bouquet</small>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item-col brews" data-aos="zoom-in" data-aos-delay="100">
+          <img src="images/cafe/cafe-1.jpg" alt="Gallery Photo 2" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fab fa-instagram"></i>
+            <h5 class="m-0">@BloomAndBrew</h5>
+            <small>Signature Rose Latte</small>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item-col events" data-aos="zoom-in" data-aos-delay="200">
+          <img src="images/flowers/flower-2.jpg" alt="Gallery Photo 3" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fab fa-instagram"></i>
+            <h5 class="m-0">@BloomAndBrew</h5>
+            <small>Wedding Arch Decor</small>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-item-col boutique" data-aos="zoom-in">
+          <img src="images/hero/hero-bg.jpg" alt="Gallery Photo 4" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fab fa-instagram"></i>
+            <h5 class="m-0">@BloomAndBrew</h5>
+            <small>Cozy Glasshouse</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. Testimonials & Google Reviews Slider Section
+       ========================================================================= -->
+  <section id="testimonials" class="testimonial-section">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge-bloom">Love & Reviews</span>
+        <h2 class="section-title">What Our Guests Say</h2>
+        <p class="section-subtitle">Rated 4.9/5 stars on Google with over 1,200+ verified customer reviews.</p>
+      </div>
+
+      <!-- Swiper Slider Container -->
+      <div class="swiper testimonial-swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="text-warning mb-3">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="fst-italic text-muted">
+                "Bloom & Brew created the bridal flowers for my wedding and also catered our morning coffee bar. It was absolute perfection!"
+              </p>
+              <div class="client-meta">
+                <img src="images/hero/about-img.jpg" alt="Sophia Anderson" class="client-avatar" loading="lazy">
+                <div>
+                  <h4 class="client-name">Sophia Anderson</h4>
+                  <span class="client-role">Bride & Event Organizer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="text-warning mb-3">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="fst-italic text-muted">
+                "The Rose Latte is hands-down the best coffee in the city! Pair that with fresh floral scents everywhere and it's heaven."
+              </p>
+              <div class="client-meta">
+                <img src="images/hero/experience-img.jpg" alt="Liam Roberts" class="client-avatar" loading="lazy">
+                <div>
+                  <h4 class="client-name">Liam Roberts</h4>
+                  <span class="client-role">Coffee Enthusiast</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="text-warning mb-3">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="fst-italic text-muted">
+                "Ordered custom birthday roses for my mother. Delivered on time in an exquisite velvet box. Will order again!"
+              </p>
+              <div class="client-meta">
+                <img src="images/flowers/flower-1.jpg" alt="Emily Chen" class="client-avatar" loading="lazy">
+                <div>
+                  <h4 class="client-name">Emily Chen</h4>
+                  <span class="client-role">Verified Client</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-4 position-relative"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. Online Ordering & Reservation Form Section
+       ========================================================================= -->
+  <section id="ordering" class="order-section">
+    <div class="container">
+      <div class="form-glass-container" data-aos="fade-up">
+        <div class="section-title-wrapper mb-4">
+          <span class="badge-bloom">Instant Booking</span>
+          <h2 class="section-title">Order Flowers or Reserve a Table</h2>
+        </div>
+
+        <!-- Nav Pills for Forms -->
+        <ul class="nav nav-pills justify-content-center mb-4" id="orderTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="btn-bloom btn-bloom-primary me-2 active" id="bouquet-tab" data-bs-toggle="tab" data-bs-target="#bouquet-panel" type="button" role="tab"><i class="fas fa-spa me-1"></i> Order Flowers</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="btn-bloom btn-bloom-secondary" id="table-tab" data-bs-toggle="tab" data-bs-target="#table-panel" type="button" role="tab"><i class="fas fa-utensils me-1"></i> Reserve Table</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="orderTabContent">
+          <!-- Flower Order Form -->
+          <div class="tab-pane fade show active" id="bouquet-panel" role="tabpanel">
+            <form id="bouquet-order-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Full Name *</label>
+                  <input type="text" class="form-control-bloom" placeholder="John Doe" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Phone Number *</label>
+                  <input type="tel" class="form-control-bloom" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Select Arrangement *</label>
+                  <select class="form-select-bloom" required>
+                    <option value="">Choose Bouquet / Arrangement...</option>
+                    <option>Elysian Garden Roses ($89.00)</option>
+                    <option>Velvet Bloom Bridal ($149.00)</option>
+                    <option>Golden Hour Sunshine ($75.00)</option>
+                    <option>Grand Crimson 50 Roses ($199.00)</option>
+                    <option>Custom Flower Box ($95.00)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Preferred Delivery Date *</label>
+                  <input type="date" class="form-control-bloom" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Card Message / Special Note</label>
+                  <textarea class="form-control-bloom" rows="3" placeholder="Write a gift card note here..."></textarea>
+                </div>
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn-bloom btn-bloom-primary px-5">
+                    <i class="fas fa-paper-plane me-2"></i> Submit Bouquet Order
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Table Reservation Form -->
+          <div class="tab-pane fade" id="table-panel" role="tabpanel">
+            <form id="table-reservation-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Your Name *</label>
+                  <input type="text" class="form-control-bloom" placeholder="Jane Smith" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Email Address *</label>
+                  <input type="email" class="form-control-bloom" placeholder="jane@example.com" required>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-semibold">Number of Guests *</label>
+                  <select class="form-select-bloom" required>
+                    <option>1 Person</option>
+                    <option selected>2 Guests</option>
+                    <option>3 - 4 Guests</option>
+                    <option>5+ Guests (Party)</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-semibold">Date *</label>
+                  <input type="date" class="form-control-bloom" required>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-semibold">Time Slot *</label>
+                  <select class="form-select-bloom" required>
+                    <option>09:00 AM (Morning Brew)</option>
+                    <option>12:30 PM (Lunch Brunch)</option>
+                    <option>04:00 PM (Afternoon Tea)</option>
+                    <option>07:00 PM (Evening Glow)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Special Seating Request</label>
+                  <input type="text" class="form-control-bloom" placeholder="e.g. Garden patio table near flowers">
+                </div>
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn-bloom btn-bloom-primary px-5">
+                    <i class="fas fa-calendar-check me-2"></i> Confirm Reservation
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. Contact Section & Map
+       ========================================================================= -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-title-wrapper" data-aos="fade-up">
+        <span class="badge-bloom">Get in Touch</span>
+        <h2 class="section-title">Visit Our Boutique & Café</h2>
+        <p class="section-subtitle">We would love to welcome you in person or assist with your floral inquiries.</p>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="glass-card p-4 h-100">
+            <h3 class="mb-4">Boutique Information</h3>
+            
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <i class="fas fa-map-marker-alt fs-3 text-danger mt-1"></i>
+              <div>
+                <h5 class="mb-1">Address</h5>
+                <p class="text-muted m-0">742 Evergreen Botanical Way, Suite 100, San Francisco, CA 94107</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <i class="fas fa-clock fs-3 text-warning mt-1"></i>
+              <div>
+                <h5 class="mb-1">Opening Hours</h5>
+                <p class="text-muted m-0">Mon – Fri: 7:30 AM – 8:00 PM</p>
+                <p class="text-muted m-0">Sat – Sun: 8:00 AM – 9:00 PM</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <i class="fas fa-phone-alt fs-3 text-success mt-1"></i>
+              <div>
+                <h5 class="mb-1">Phone & WhatsApp</h5>
+                <p class="text-muted m-0">+1 (555) 019-2834</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3">
+              <i class="fas fa-envelope fs-3 text-primary mt-1"></i>
+              <div>
+                <h5 class="mb-1">Email</h5>
+                <p class="text-muted m-0">hello@bloomandbrew.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="map-container mb-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0192842491!2d-122.41941568468165!3d37.77492957975924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. FAQ & Newsletter Section
+       ========================================================================= -->
+  <section class="py-5 bg-body">
+    <div class="container">
+      <div class="row g-5">
+        <!-- FAQ Accordion -->
+        <div class="col-lg-7" data-aos="fade-right">
+          <span class="badge-bloom">Frequently Asked Questions</span>
+          <h2 class="mb-4">Common Questions</h2>
+
+          <div class="accordion faq-accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Do you offer same-day flower delivery?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Yes! Orders placed before 1:00 PM qualify for same-day local delivery across the metro area.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Are your flowers fresh and organically grown?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  We partner directly with certified eco-friendly flower farms to ensure 100% fresh, pesticide-free blooms every day.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Can I host private events or bridal showers at the café?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted">
+                  Absolutely! We host intimate private events, flower workshop sessions, and bridal showers in our glasshouse patio.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter Card -->
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="glass-card p-4 text-center h-100 d-flex flex-column justify-content-center">
+            <i class="fas fa-paper-plane fs-1 text-danger mb-3"></i>
+            <h3>Subscribe to Our Newsletter</h3>
+            <p class="text-muted small">Join our VIP club for 10% off your first bouquet order & seasonal cafe specials.</p>
+            <form id="newsletter-form" class="mt-3">
+              <input type="email" class="form-control-bloom mb-3 text-center" placeholder="Enter your email address" required>
+              <button type="submit" class="btn-bloom btn-bloom-primary w-100">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12. Footer Section
+       ========================================================================= -->
+  <footer class="footer-bloom">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">Bloom & Brew</div>
+          <p class="text-secondary small">
+            Where flowers bloom and coffee warms the soul. A luxury botanical cafe experience celebrating life's sweetest moments.
+          </p>
+          <div class="mt-3">
+            <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="footer-social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-white mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#flowers" class="footer-link">Flower Shop</a></li>
+            <li><a href="#cafe" class="footer-link">Café Menu</a></li>
+            <li><a href="#gallery" class="footer-link">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white mb-3">Popular Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="#flowers" class="footer-link">Wedding Bouquets</a></li>
+            <li><a href="#flowers" class="footer-link">Luxury Red Roses</a></li>
+            <li><a href="#cafe" class="footer-link">Signature Rose Latte</a></li>
+            <li><a href="#cafe" class="footer-link">Botanical Teas</a></li>
+            <li><a href="#ordering" class="footer-link">Table Reservation</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white mb-3">Business Hours</h5>
+          <p class="text-secondary small mb-1"><strong class="text-white">Monday - Friday:</strong> 7:30 AM - 8:00 PM</p>
+          <p class="text-secondary small mb-1"><strong class="text-white">Saturday - Sunday:</strong> 8:00 AM - 9:00 PM</p>
+          <p class="text-secondary small mt-3"><i class="fas fa-map-marker-alt me-1 text-danger"></i> San Francisco, CA</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary pt-3">
+        <div>&copy; 2026 Bloom & Brew Studio. All rights reserved.</div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-secondary">Privacy Policy</a>
+          <a href="#" class="text-secondary">Terms of Service</a>
+          <a href="#" class="text-secondary">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       JavaScript Libraries CDN & Scripts
+       ========================================================================= -->
+  <!-- Bootstrap 5 JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Swiper.js Slider JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/animation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
