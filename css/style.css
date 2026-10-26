@@ -679,6 +679,8 @@ img {
 }
 
 .flower-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -731,7 +733,14 @@ img {
 }
 
 .flower-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 24px;
+}
+
+.flower-meta {
+  margin-top: auto;
 }
 
 .flower-card .btn-bloom {

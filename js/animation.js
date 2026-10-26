@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero Section Reveal Timeline
     const heroTl = gsap.timeline();
 
-    heroTl.from('.hero-tagline', {
+    heroTl.from('.hero-section .badge-bloom', {
       opacity: 0,
       y: -30,
       duration: 0.8,
